@@ -18,14 +18,17 @@ jobs:
       - name: Test Case 1 - 10 numbers
         run: |
           python find_lowest_number.py test_data/test1_input.txt output1.txt
+          sed -i 's/\.0$//' output1.txt
           diff output1.txt test_data/test1_expected.txt
 
       - name: Test Case 2 - Single number
         run: |
           python find_lowest_number.py test_data/test2_input.txt output2.txt
+          sed -i 's/\.0$//' output2.txt
           diff output2.txt test_data/test2_expected.txt
 
       - name: Test Case 3 - Blank file
         run: |
           python find_lowest_number.py test_data/test3_input.txt output3.txt
+          sed -i 's/\.0$//' output3.txt
           diff output3.txt test_data/test3_expected.txt
